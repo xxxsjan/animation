@@ -5,6 +5,7 @@ import { gsap } from 'gsap'
 
 export default function FadeIn() {
   useGSAP(() => {
+    // 标题
     gsap.fromTo(
       '.title1',
       {
@@ -28,23 +29,8 @@ export default function FadeIn() {
 
     t1.addLabel('spin')
 
-    t1.from(
-      '.item1',
-      {
-        opacity: 0,
-        x: '-10%'
-      },
-      'spin'
-    )
-
-    t1.from(
-      '.item2',
-      {
-        opacity: 0,
-        x: '10%'
-      },
-      'spin'
-    )
+    t1.from('.item1', { opacity: 0, x: '-10%' }, 'spin')
+    t1.from('.item2', { opacity: 0, x: '10%' }, 'spin')
 
     const t2 = gsap.timeline({
       scrollTrigger: {
@@ -57,23 +43,9 @@ export default function FadeIn() {
 
     t2.addLabel('spin')
 
-    t2.from(
-      '.item3',
-      {
-        opacity: 0,
-        x: '-10%'
-      },
-      'spin'
-    )
+    t2.from('.item3', { opacity: 0, x: '-10%' }, 'spin')
 
-    t2.from(
-      '.item4',
-      {
-        opacity: 0,
-        x: '10%'
-      },
-      'spin'
-    )
+    t2.from('.item4', { opacity: 0, x: '10%' }, 'spin')
 
     const t3 = gsap.timeline({
       scrollTrigger: {
@@ -84,11 +56,7 @@ export default function FadeIn() {
       }
     })
 
-    t3.from('.item5', {
-      opacity: 0,
-      y: 20,
-      stagger: 0.1
-    })
+    t3.from('.item5', { opacity: 0, y: 20, stagger: 0.1 })
   })
   return (
     <article className="w-screen overflow-x-hidden bg-stone-900 text-center text-white">

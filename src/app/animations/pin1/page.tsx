@@ -19,25 +19,18 @@ export default function Pin() {
         toggleActions: 'play none reverse none'
       }
     })
-
+    console.log(window.innerWidth - document.querySelector('.section15_img_wrapper')!.getBoundingClientRect().right)
+    // 主图
     tl.from('.section15_img_wrapper', {
       width: `${window.innerWidth}px`,
       height: `${window.innerHeight}px`,
       x: window.innerWidth - document.querySelector('.section15_img_wrapper')!.getBoundingClientRect().right,
       borderRadius: 0
     })
-
-    tl.from(
-      '.section15_block2',
-      {
-        x: '1000px'
-      },
-      'spin'
-    )
-
-    tl.to('.section15_block', {
-      right: 0
-    })
+    // 右侧
+    tl.from('.section15_block2', { x: '1000px' }, 'spin')
+    // 容器
+    tl.to('.section15_block', { right: 0 })
   })
 
   return (
